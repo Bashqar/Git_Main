@@ -1,0 +1,19 @@
+﻿/////////////////////////////////////////////////////////////////////////
+// Shared Globals
+/////////////////////////////////////////////////////////////////////////
+
+package com.k2view.cdbms.usercode.common;
+
+import com.k2view.cdbms.shared.utils.UserCodeDescribe.*;
+
+public class SharedGlobals {
+
+	#globals#
+	#each#
+	@desc(!COMMENT!)
+	@category("!CATEGORY!")
+	public static final String !NAME! = "!VALUE!";
+	#end#
+
+
+}

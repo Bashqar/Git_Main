@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GenericInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" type="LOCAL" displayName="Local File System" enabled="true" version="1.2">
+  <Name>Unix_LocalFile</Name>
+  <Properties>
+    <Property name="WorkingDir" displayName="Working Directory" dataType="string" mandatory="true" show="true" readOnly="false" category="">
+      <Value>/home/k2view</Value>
+      <DefaultValue />
+      <Comments />
+      <OptionsList />
+    </Property>
+    <Property name="FilesFilter" displayName="Files Filter" dataType="string" mandatory="false" show="true" readOnly="false" category="">
+      <Value>Lab_Results.csv</Value>
+      <DefaultValue />
+      <Comments>Regular expression</Comments>
+      <OptionsList />
+    </Property>
+    <Property name="Affinity" displayName="Affinity" dataType="string" mandatory="false" show="true" readOnly="false" category="">
+      <Value />
+      <DefaultValue />
+      <Comments>Comma delimited string to define candidate owners nodes. Can be DC_name/node_ip/Node_identifier</Comments>
+      <OptionsList />
+    </Property>
+  </Properties>
+  <TestConnection enabled="false" />
+</GenericInterface>

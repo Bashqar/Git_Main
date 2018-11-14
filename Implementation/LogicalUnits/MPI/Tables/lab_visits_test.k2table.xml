@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>lab_visits_test</Name>
+  <ID>tbl_lab_visits_test</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="visit_id" id="tblCol_395896b801054a2d82bf935fafc6f959" index="0" datatype="text" mandatory="true" />
+    <Column name="lab_id" id="tblCol_717311c1228c4664b5e77b93dd10f3e5" index="1" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

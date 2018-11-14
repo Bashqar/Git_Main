@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_public_lab_results</ID>
+  <PopulationObjectName>query_public_lab_results</PopulationObjectName>
+  <TableName>lab_results</TableName>
+  <RootItemID>query_query_public_lab_results</RootItemID>
+  <LazyDataUpdate syncMethod="TimeInterval" performEvery="00:00:30">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <InputArguments>
+    <Arg name="visit_id" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="lab_id" id="queryCol_1" dataType="Text" index="1" />
+    <Arg name="lab_date" id="queryCol_2" dataType="Text" index="2" />
+    <Arg name="lab_type" id="queryCol_3" dataType="Text" index="3" />
+    <Arg name="results" id="queryCol_4" dataType="Text" index="4" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_lab_results" name="query_public_lab_results" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="LIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="visit_id" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="lab_id" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="lab_date" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="lab_type" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="results" dataType="Text" index="4" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM public.lab_results]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="14" fromNodeOrder="0" fromItemID="query_query_public_lab_results" fromColID="queryCol_0" toItemID="tbl_lab_results" toColID="tblCol_5882dbd2728e42ef9b5f7487d82b0750" />
+    <Link partId="15" fromNodeOrder="0" fromItemID="query_query_public_lab_results" fromColID="queryCol_1" toItemID="tbl_lab_results" toColID="tblCol_0f19f5449d7c420fa42b739887a27c9c" />
+    <Link partId="16" fromNodeOrder="0" fromItemID="query_query_public_lab_results" fromColID="queryCol_2" toItemID="tbl_lab_results" toColID="tblCol_32fe2dc6d513458f923d6704beffb85a" />
+    <Link partId="17" fromNodeOrder="0" fromItemID="query_query_public_lab_results" fromColID="queryCol_3" toItemID="tbl_lab_results" toColID="tblCol_2affcbb2d25d41b59d220147deb173ba" />
+    <Link partId="18" fromNodeOrder="0" fromItemID="query_query_public_lab_results" fromColID="queryCol_4" toItemID="tbl_lab_results" toColID="tblCol_b259ef7b6d2944dfa5989064e60da6a0" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="lab_results.query_public_lab_results.k2tablePop.xml" lastPartID="54">
+      <TableNode partID="0" name="lab_results" pos="382.537048 5.781254" width="309.78717" />
+      <DBQueryNode partID="8" name="LIS_DB" pos="10 0.8177109" size="253 120.364578" isRoot="true">
+        <DBQuery>{"Name":"query_public_lab_results","ID":"query_query_public_lab_results","ConnName":"LIS_DB","SQL":"SELECT * FROM public.lab_results","ColumnsList":[{"ID":"queryCol_0","Name":"visit_id","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"lab_id","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"lab_date","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"lab_type","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"results","DataType":"Text","Index":4,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="14" from="0" to="1" pointsArr="263 36.85417 273 36.85417 373.000031 36.8177147 383.000031 36.8177147" fromNodePartID="8" fromNodeColumnName="visit_id" toNodePartID="0" toNodeColumnName="visit_id" />
+      <Link partID="15" from="2" to="3" pointsArr="263 48.9270859 273 48.9270859 373.000031 48.89063 383.000031 48.89063" fromNodePartID="8" fromNodeColumnName="lab_id" toNodePartID="0" toNodeColumnName="lab_id" />
+      <Link partID="16" from="4" to="5" pointsArr="263 61 273 61 373.000031 60.9635429 383.000031 60.9635429" fromNodePartID="8" fromNodeColumnName="lab_date" toNodePartID="0" toNodeColumnName="lab_date" />
+      <Link partID="17" from="6" to="7" pointsArr="263 73.0729141 273 73.0729141 373.000031 73.03646 383.000031 73.03646" fromNodePartID="8" fromNodeColumnName="lab_type" toNodePartID="0" toNodeColumnName="lab_type" />
+      <Link partID="18" from="8" to="9" pointsArr="263 85.14583 273 85.14583 373.000031 85.109375 383.000031 85.109375" fromNodePartID="8" fromNodeColumnName="results" toNodePartID="0" toNodeColumnName="results" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

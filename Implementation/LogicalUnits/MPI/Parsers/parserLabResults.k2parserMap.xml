@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ParserMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.0.6.2">
+  <Name>parserLabResults</Name>
+  <MapType>ParserMap</MapType>
+  <RootItemID>f_1</RootItemID>
+  <SimpleObject>false</SimpleObject>
+  <TargetsList>
+    <Target xsi:type="ParserMapTargetItem">
+      <TargetName>lab_results_parser</TargetName>
+      <Module>Parser_Map</Module>
+      <ItemsList>
+        <Item id="f_1" name="k2_StreamParserDelimited" nodeOrder="0" module="Function" mapObjectModule="Function" fileName="k2_StreamParserDelimited.k2function.xml">
+          <InputsList>
+            <Input id="fi_1.0" name="recordDelimiter" defaultValue="\n" />
+            <Input id="fi_1.1" name="fieldDelimiter" defaultValue="," />
+            <Input id="fi_1.2" name="enclosingChar" defaultValue="'" />
+          </InputsList>
+          <OutputsList>
+            <Output id="fo_1.0" name="result" />
+          </OutputsList>
+        </Item>
+        <Item id="f_6" name="fnSplitMapArgs" nodeOrder="1" module="Function" mapObjectModule="Function" fileName="fnSplitMapArgs.k2function.xml">
+          <InputsList>
+            <Input id="fi_6.0" name="in_map" />
+          </InputsList>
+          <OutputsList>
+            <Output id="fo_6.0" name="visit_id" />
+            <Output id="fo_6.1" name="lab_id" />
+            <Output id="fo_6.2" name="lab_type" />
+            <Output id="fo_6.3" name="lab_date" />
+          </OutputsList>
+        </Item>
+        <Item xsi:type="ParserRecordTypeDataSave" id="rt_lab_results_parser" name="lab_results_parser" nodeOrder="2" module="ParserRecordType" mapObjectModule="ParserRecordType" parentParser="parserLabResults">
+          <InputsList>
+            <Input xsi:type="ParserRecordTypeDataSaveColumnInput" id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" dataType="Text" />
+            <Input xsi:type="ParserRecordTypeDataSaveColumnInput" id="rtCol_d9972e57087849658600826dc1de1893" name="lab_id" dataType="Text" />
+            <Input xsi:type="ParserRecordTypeDataSaveColumnInput" id="rtCol_cdb56f51cb584a339294f4ec5f4814fe" name="lab_type" dataType="Text" />
+            <Input xsi:type="ParserRecordTypeDataSaveColumnInput" id="rtCol_bc96a760b447450f8a131fa5cf7af0ba" name="lab_date" dataType="Text" />
+          </InputsList>
+          <OutputsList />
+          <RecordTypeKeyColumn />
+          <PkColumnsList>
+            <RecordTypePkColumn id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" pkType="Partition_Key" />
+          </PkColumnsList>
+          <ClusteringKeyOrder>ASC</ClusteringKeyOrder>
+          <CompactionStrategy>SizeTieredCompactionStrategy</CompactionStrategy>
+          <TimeToLive>0</TimeToLive>
+          <CreateStatement><![CDATA[]]></CreateStatement>
+        </Item>
+      </ItemsList>
+      <LinksList>
+        <Link partId="17" fromNodeOrder="1" fromItemID="f_6" fromColID="fo_6.0" toItemID="rt_lab_results_parser" toColID="rtCol_b4ea3cb26ec0431f9180efad5583ceca" />
+        <Link partId="35" fromNodeOrder="0" fromItemID="f_1" fromColID="fo_1.0" toItemID="f_6" toColID="fi_6.0" />
+        <Link partId="18" fromNodeOrder="1" fromItemID="f_6" fromColID="fo_6.1" toItemID="rt_lab_results_parser" toColID="rtCol_d9972e57087849658600826dc1de1893" />
+        <Link partId="19" fromNodeOrder="1" fromItemID="f_6" fromColID="fo_6.2" toItemID="rt_lab_results_parser" toColID="rtCol_cdb56f51cb584a339294f4ec5f4814fe" />
+        <Link partId="20" fromNodeOrder="1" fromItemID="f_6" fromColID="fo_6.3" toItemID="rt_lab_results_parser" toColID="rtCol_bc96a760b447450f8a131fa5cf7af0ba" />
+      </LinksList>
+      <ParserMapRecordType id="rt_lab_results_parser" name="lab_results_parser" parentParser="parserLabResults">
+        <Active xsi:nil="true" />
+        <RecordTypeKeyColumn />
+        <Columns>
+          <Column id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" index="0">
+            <DataType>Text</DataType>
+          </Column>
+          <Column id="rtCol_d9972e57087849658600826dc1de1893" name="lab_id" index="1">
+            <DataType>Text</DataType>
+          </Column>
+          <Column id="rtCol_cdb56f51cb584a339294f4ec5f4814fe" name="lab_type" index="2">
+            <DataType>Text</DataType>
+          </Column>
+          <Column id="rtCol_bc96a760b447450f8a131fa5cf7af0ba" name="lab_date" index="3">
+            <DataType>Text</DataType>
+          </Column>
+        </Columns>
+        <PkColumns>
+          <PkColumn id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" pkType="Partition_Key" />
+        </PkColumns>
+        <CreateStatement><![CDATA[]]></CreateStatement>
+      </ParserMapRecordType>
+    </Target>
+  </TargetsList>
+  <DiagramGraph>
+    <Graph name="parserLabResults.k2parserMap.xml" lastPartID="74" mapType="ParserMap" logicalUnitNodeType="Full_Hierarchy">
+      <ParserRecordTypeTargetNode partID="0" name="lab_results_parser" pos="436.106934 -2.14582825" size="312.9986 98.29166" parserName="parserLabResults" isTargetNode="true" isRoot="false" />
+      <FunctionMapNode id="0" L0="2" L1="3" L2="4" R0="5" partID="1" topLabel="k2_StreamParserDelimited (1)" pos="9.99996948 19.3450546" size="186.536438 61.3099" isRoot="true">
+        <KFunction>{"Name":"k2_StreamParserDelimited","ID":"f_1","Category":"Parser","FunctionLevel":1,"FunctionType":0,"FunctionType2":1,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":true,"inputParams":[{"Name":"recordDelimiter","ID":"fi_1.0","Index":0,"DataType":"String","Comment":"a character to be used as a separator between records","MapDefaultValue":"\\n"},{"Name":"fieldDelimiter","ID":"fi_1.1","Index":1,"DataType":"String","Comment":"a character to be used as a separator between fields","MapDefaultValue":","},{"Name":"enclosingChar","ID":"fi_1.2","Index":2,"DataType":"String","Comment":"a character to be used to enclose fields","MapDefaultValue":"'"}],"outputParams":[{"Name":"result","ID":"fo_1.0","Index":0,"DataType":"Map&lt;String,Object&gt;","Comment":""}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <FunctionMapNode id="1" L0="6" R0="7" R1="8" R2="9" R3="10" partID="6" topLabel="fnSplitMapArgs (6)" pos="241.516541 13.3085833" size="151.608887 73.3828049" isRoot="false">
+        <KFunction>{"Name":"fnSplitMapArgs","ID":"f_6","Category":"Parser","FunctionLevel":0,"FunctionType":0,"FunctionType2":0,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":false,"inputParams":[{"Name":"in_map","ID":"fi_6.0","Index":0,"DataType":"Map&lt;String,Object&gt;"}],"outputParams":[{"Name":"visit_id","ID":"fo_6.0","Index":0,"DataType":"String","Comment":""},{"Name":"lab_id","ID":"fo_6.1","Index":1,"DataType":"String","Comment":""},{"Name":"lab_type","ID":"fo_6.2","Index":2,"DataType":"String","Comment":""},{"Name":"lab_date","ID":"fo_6.3","Index":3,"DataType":"String","Comment":""}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link from="7" to="11" partID="17" pointsArr="393.125427 34.4361839 403.125427 34.4361839 426.106934 28.8906269 436.106934 28.8906269" fromNodePartID="6" fromNodeColumnName="visit_id" toNodePartID="0" toNodeColumnName="visit_id" />
+      <Link from="8" to="12" partID="18" pointsArr="393.125427 46.5091 403.125427 46.5091 426.106934 40.9635429 436.106934 40.9635429" fromNodePartID="6" fromNodeColumnName="lab_id" toNodePartID="0" toNodeColumnName="lab_id" />
+      <Link from="5" to="6" partID="35" pointsArr="172.35083 52.5455742 182.35083 52.5455742 231.516541 52.5455551 241.516541 52.5455551" fromNodePartID="1" fromNodeColumnName="result" toNodePartID="6" toNodeColumnName="in_map" />
+      <Link from="9" to="13" partID="19" pointsArr="393.125427 58.582016 403.125427 58.582016 426.106934 53.0364571 436.106934 53.0364571" fromNodePartID="6" fromNodeColumnName="lab_type" toNodePartID="0" toNodeColumnName="lab_type" />
+      <Link from="10" to="14" partID="20" pointsArr="393.125427 70.65493 403.125427 70.65493 426.106934 65.109375 436.106934 65.109375" fromNodePartID="6" fromNodeColumnName="lab_date" toNodePartID="0" toNodeColumnName="lab_date" />
+    </Graph>
+  </DiagramGraph>
+  <Active>true</Active>
+  <syncEvery>00:00:10</syncEvery>
+  <InterfaceName>Unix_LocalFile</InterfaceName>
+</ParserMap>

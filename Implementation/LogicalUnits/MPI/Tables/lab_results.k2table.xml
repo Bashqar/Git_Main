@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>lab_results</Name>
+  <ID>tbl_lab_results</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="visit_id" id="tblCol_5882dbd2728e42ef9b5f7487d82b0750" index="0" datatype="Text" />
+    <Column name="lab_id" id="tblCol_0f19f5449d7c420fa42b739887a27c9c" index="1" datatype="Text" mandatory="true" />
+    <Column name="lab_date" id="tblCol_32fe2dc6d513458f923d6704beffb85a" index="2" datatype="Text" />
+    <Column name="lab_type" id="tblCol_2affcbb2d25d41b59d220147deb173ba" index="3" datatype="Text" />
+    <Column name="results" id="tblCol_b259ef7b6d2944dfa5989064e60da6a0" index="4" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_0f19f5449d7c420fa42b739887a27c9c" />
+  </IndexesList>
+  <EnrichmentList>
+    <Enrichment>
+      <Name>fnPopRef_Neid</Name>
+      <Type>Function</Type>
+      <TableName>lab_results</TableName>
+    </Enrichment>
+  </EnrichmentList>
+</TableObject>

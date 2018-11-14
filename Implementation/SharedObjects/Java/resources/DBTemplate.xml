@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Outer>
+	[[[ pat = select first_name,last_name,patient_id from patient;
+	<Inner>
+		<id>${pat.patient_id}</id>
+		<first_name>${pat.first_name}</first_name>
+		<last_name>${pat.last_name}</last_name>
+		<invoices>
+			[[[ invoice = select invoice_id, due_date,status ,balance from invoice;
+			<invoice>
+				<invoice_id>${invoice.invoice_id}</invoice_id>
+				<due_date>${invoice.due_date}</due_date>
+				<status>${invoice.status}</status>
+				<balance>${invoice.balance}</balance>
+			</invoice>
+				[[[ payment = select payment_id, status, amount from payment where invoice_id = ${invoice.invoice_id};
+				<payment>
+					<payment_id>${payment.payment_id}</payment_id>
+					<status>${payment.status}</status>
+					<amount>${payment.amount}</amount>
+				</payment>
+				]]]	
+			]]]
+		</invoices>
+	</Inner>
+	]]]
+</Outer>

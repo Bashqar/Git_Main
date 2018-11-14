@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_public_prescribed_medication</ID>
+  <PopulationObjectName>query_public_prescribed_medication</PopulationObjectName>
+  <TableName>prescribed_medication</TableName>
+  <RootItemID>query_query_public_prescribed_medication</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="SSN" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="PRESCRIPTION_ID" id="queryCol_1" dataType="Text" index="1" />
+    <Arg name="PRESCRIBED_MEDICATION" id="queryCol_2" dataType="Text" index="2" />
+    <Arg name="FROM_DATE" id="queryCol_3" dataType="Text" index="3" />
+    <Arg name="TO_DATE" id="queryCol_4" dataType="Text" index="4" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_public_prescribed_medication" name="query_public_prescribed_medication" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="PIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="PRESCRIBED_MEDICATION" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="FROM_DATE" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="TO_DATE" dataType="Text" index="4" />
+      </OutputsList>
+      <SQL><![CDATA[Select *
+From prescribed_medication]]></SQL>
+    </Item>
+    <Item id="f_39" name="trMedicationId" nodeOrder="1" module="Translation" mapObjectModule="Translation" fileName="trMedicationId.k2trans.xml">
+      <InputsList>
+        <Input id="fi_39.0" name="MEDICATION_ID" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_39.0" name="MEDICATION_NAME" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="16" fromNodeOrder="0" fromItemID="query_query_public_prescribed_medication" fromColID="queryCol_2" toItemID="tbl_prescribed_medication" toColID="tblCol_fcc7bc75144c4558a7c302b2d72c0cc1" />
+    <Link partId="17" fromNodeOrder="0" fromItemID="query_query_public_prescribed_medication" fromColID="queryCol_3" toItemID="tbl_prescribed_medication" toColID="tblCol_25d61c20479c4aa8bddbd578a87afbff" />
+    <Link partId="18" fromNodeOrder="0" fromItemID="query_query_public_prescribed_medication" fromColID="queryCol_4" toItemID="tbl_prescribed_medication" toColID="tblCol_989f37e1dde244bfaa97a230d4afc3a4" />
+    <Link partId="43" fromNodeOrder="1" fromItemID="f_39" fromColID="fo_39.0" toItemID="tbl_prescribed_medication" toColID="tblCol_4c80b848df5f45ee9525469a2c82abe3" />
+    <Link partId="42" fromNodeOrder="0" fromItemID="query_query_public_prescribed_medication" fromColID="queryCol_2" toItemID="f_39" toColID="fi_39.0" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="prescribed_medication.query_public_prescribed_medication.k2tablePop.xml" lastPartID="73">
+      <TableNode partID="0" name="prescribed_medication" pos="436.000824 5.781254" width="309.778229" />
+      <DBQueryNode partID="8" name="PIS_DB" pos="8 -31.18229" size="306.454834 120.364578" isRoot="true">
+        <DBQuery>{"Name":"query_public_prescribed_medication","ID":"query_query_public_prescribed_medication","ConnName":"PIS_DB","SQL":"Select *\r\nFrom prescribed_medication","ColumnsList":[{"ID":"queryCol_0","Name":"SSN","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"PRESCRIPTION_ID","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"PRESCRIBED_MEDICATION","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"FROM_DATE","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"TO_DATE","DataType":"Text","Index":4,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <TranslationMapNode id="0" L0="1" R0="2" partID="39" topLabel="trMedicationId (39)" pos="352.006775 220.690109" size="214.216736 45.09114">
+        <TranslationItem>{"ID":"f_39","Name":"trMedicationId","InputNotFoundAction":0,"ListSchemaItems":[{"Title":"MEDICATION_ID","ColumnName":"MEDICATION_ID","Direction":0,"Type":"Text","Length":10,"Format":"","ID":"fi_39.0","Index":0,"AllowNULL":true,"GridColumnProperties":{"Width":108}},{"Title":"MEDICATION_NAME","ColumnName":"MEDICATION_NAME","Direction":1,"Type":"Text","Length":50,"Format":"","ID":"fo_39.0","Index":0,"DefaultValueIsExpression":false,"AllowNULL":true,"GridColumnProperties":{"Width":130}}],"IsImportFromSQL":false,"IsDynamicData":false,"DynamicDbConnName":"","DynamicSqlQuery":"","ImportFileMapList":[],"DataRowsHeight":20}</TranslationItem>
+      </TranslationMapNode>
+      <Link partID="16" from="3" to="4" pointsArr="314.454834 29 324.454834 29 426.000824 60.96354 436.000824 60.96354" fromNodePartID="8" fromNodeColumnName="PRESCRIBED_MEDICATION" toNodePartID="0" toNodeColumnName="prescribed_medication" />
+      <Link partID="17" from="5" to="6" pointsArr="314.454834 41.0729141 324.454834 41.0729141 426.000824 73.03645 436.000824 73.03645" fromNodePartID="8" fromNodeColumnName="FROM_DATE" toNodePartID="0" toNodeColumnName="from_date" />
+      <Link partID="18" from="7" to="8" pointsArr="314.454834 53.14583 324.454834 53.14583 426.000824 85.109375 436.000824 85.109375" fromNodePartID="8" fromNodeColumnName="TO_DATE" toNodePartID="0" toNodeColumnName="to_date" />
+      <Link partID="42" from="3" to="1" pointsArr="314.454834 29 324.454834 29 342.006775 245.78125 352.006775 245.78125" fromNodePartID="8" fromNodeColumnName="PRESCRIBED_MEDICATION" toNodePartID="39" toNodeColumnName="MEDICATION_ID" />
+      <Link partID="43" from="2" to="9" pointsArr="566.2235 245.78125 576.2235 245.78125 426.000824 97.18228 436.000824 97.18228" fromNodePartID="39" fromNodeColumnName="MEDICATION_NAME" toNodePartID="0" toNodeColumnName="medication_name" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

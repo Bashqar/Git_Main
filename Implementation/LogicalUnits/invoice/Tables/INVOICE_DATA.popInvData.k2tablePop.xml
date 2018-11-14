@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>popInvData</ID>
+  <PopulationObjectName>popInvData</PopulationObjectName>
+  <TableName>INVOICE_DATA</TableName>
+  <RootItemID>f_7</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="inp" id="fi_7.0" dataType="String" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item id="f_7" name="fnPopInvData" nodeOrder="0" module="Function" mapObjectModule="Function" fileName="fnPopInvData.k2function.xml">
+      <InputsList>
+        <Input id="fi_7.0" name="inp" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_7.0" name="invoice_id" />
+        <Output id="fo_7.1" name="due_date" />
+        <Output id="fo_7.2" name="status" />
+        <Output id="fo_7.3" name="balance" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="33" fromNodeOrder="0" fromItemID="f_7" fromColID="fo_7.0" toItemID="tbl_INVOICE_DATA" toColID="tblCol_886e6b642b944272b2c08d5a42bcf50f" />
+    <Link partId="34" fromNodeOrder="0" fromItemID="f_7" fromColID="fo_7.1" toItemID="tbl_INVOICE_DATA" toColID="tblCol_325b2e936cf4447cb8558e5051e6bb63" />
+    <Link partId="35" fromNodeOrder="0" fromItemID="f_7" fromColID="fo_7.2" toItemID="tbl_INVOICE_DATA" toColID="tblCol_8452466d81624042816455b16a96b735" />
+    <Link partId="36" fromNodeOrder="0" fromItemID="f_7" fromColID="fo_7.3" toItemID="tbl_INVOICE_DATA" toColID="tblCol_be8c29a473314912a2009143fda9f851" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="INVOICE_DATA.popInvData.k2tablePop.xml" lastPartID="47">
+      <TableNode partID="0" name="INVOICE_DATA" pos="527 115" width="309.3241" />
+      <FunctionMapNode id="0" L0="1" R0="2" R1="3" R2="4" R3="5" partID="7" topLabel="fnPopInvData (7)" pos="239.969543 117.999969" size="141.907471 73.38281" isRoot="true">
+        <KFunction>{"Name":"fnPopInvData","ID":"f_7","Category":"Root","Version":"4.0.5.4","FunctionLevel":0,"FunctionType":0,"FunctionType2":1,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":true,"inputParams":[{"Name":"inp","ID":"fi_7.0","Index":0,"DataType":"String"}],"outputParams":[{"Name":"invoice_id","ID":"fo_7.0","Index":0,"DataType":"String"},{"Name":"due_date","ID":"fo_7.1","Index":1,"DataType":"String"},{"Name":"status","ID":"fo_7.2","Index":2,"DataType":"String"},{"Name":"balance","ID":"fo_7.3","Index":3,"DataType":"String"}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link partID="33" from="2" to="6" pointsArr="381.877 139.127563 391.877 139.127563 517 146.036453 527 146.036453" fromNodePartID="7" fromNodeColumnName="invoice_id" toNodePartID="0" toNodeColumnName="INVOICE_ID" />
+      <Link partID="34" from="3" to="7" pointsArr="381.877 151.200485 391.877 151.200485 517 158.109375 527 158.109375" fromNodePartID="7" fromNodeColumnName="due_date" toNodePartID="0" toNodeColumnName="DUE_DATE" />
+      <Link partID="35" from="4" to="8" pointsArr="381.877 163.273392 391.877 163.273392 517 170.182281 527 170.182281" fromNodePartID="7" fromNodeColumnName="status" toNodePartID="0" toNodeColumnName="STATUS" />
+      <Link partID="36" from="5" to="9" pointsArr="381.877 175.346313 391.877 175.346313 517 182.2552 527 182.2552" fromNodePartID="7" fromNodeColumnName="balance" toNodePartID="0" toNodeColumnName="BALANCE" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>TEST_VIEW</Name>
+  <ID>tbl_TEST_VIEW</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="COL_1" id="tblCol_7ee26d315ba04bfd9a0ec12c5a71423c" index="0" datatype="Text" />
+    <Column name="COL_2" id="tblCol_75d9abb0a898402d900c4bf52229e924" index="1" datatype="Text" mandatory="true" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

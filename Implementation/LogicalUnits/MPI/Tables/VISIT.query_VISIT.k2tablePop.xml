@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_VISIT</ID>
+  <PopulationObjectName>query_VISIT</PopulationObjectName>
+  <TableName>VISIT</TableName>
+  <RootItemID>query_query_VISIT</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="PATIENT_ID" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="VISIT_ID" id="queryCol_1" dataType="Text" index="1" />
+    <Arg name="VISIT_DATE" id="queryCol_2" dataType="Text" index="2" />
+    <Arg name="STATUS" id="queryCol_3" dataType="Text" index="3" />
+    <Arg name="PHYSICIAN" id="queryCol_4" dataType="Text" index="4" />
+    <Arg name="DIAGNOSIS" id="queryCol_5" dataType="Text" index="5" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_VISIT" name="query_VISIT" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="HIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="PATIENT_ID" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="VISIT_ID" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="VISIT_DATE" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="STATUS" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="PHYSICIAN" dataType="Text" index="4" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_5" name="DIAGNOSIS" dataType="Text" index="5" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM VISIT]]></SQL>
+    </Item>
+    <Item id="f_52" name="k2_concat5" nodeOrder="1" module="Function" mapObjectModule="Function" fileName="k2_concat5.k2function.xml">
+      <InputsList>
+        <Input id="fi_52.0" name="i_str1" defaultValue="V" />
+        <Input id="fi_52.1" name="i_str2" />
+        <Input id="fi_52.2" name="i_str3" />
+        <Input id="fi_52.3" name="i_str4" />
+        <Input id="fi_52.4" name="i_str5" />
+        <Input id="fi_52.5" name="i_delimiter" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_52.0" name="o_str1" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="16" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_0" toItemID="tbl_VISIT" toColID="tblCol_67a8ac9c209e4ef481794a64d3320256" />
+    <Link partId="17" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_1" toItemID="tbl_VISIT" toColID="tblCol_5328a72121fe4b57bede89e9a12a1588" />
+    <Link partId="18" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_2" toItemID="tbl_VISIT" toColID="tblCol_2e1008a2667a43efb3f498591c043939" />
+    <Link partId="19" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_3" toItemID="tbl_VISIT" toColID="tblCol_d2e74f57d0dd444889d98e2bbfa744f9" />
+    <Link partId="20" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_4" toItemID="tbl_VISIT" toColID="tblCol_95c4d6cee9b348478179152357239bb1" />
+    <Link partId="21" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_5" toItemID="tbl_VISIT" toColID="tblCol_3c9ede5230c04767b033d4ab4f5c0e3b" />
+    <Link partId="61" fromNodeOrder="1" fromItemID="f_52" fromColID="fo_52.0" toItemID="tbl_VISIT" toColID="tblCol_993436edfbcc428babcf6da57f13d107" />
+    <Link partId="60" fromNodeOrder="0" fromItemID="query_query_VISIT" fromColID="queryCol_1" toItemID="f_52" toColID="fi_52.1" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="VISIT.query_VISIT.k2tablePop.xml" lastPartID="83">
+      <TableNode partID="0" name="VISIT" pos="383.000031 5.74479675" width="309.3242" />
+      <DBQueryNode partID="9" name="HIS_DB" pos="10 0.78125" size="253 132.4375" isRoot="true">
+        <DBQuery>{"Name":"query_VISIT","ID":"query_query_VISIT","ConnName":"HIS_DB","SQL":"SELECT * FROM VISIT","ColumnsList":[{"ID":"queryCol_0","Name":"PATIENT_ID","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"VISIT_ID","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"VISIT_DATE","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"STATUS","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"PHYSICIAN","DataType":"Text","Index":4,"IsInputArgument":true},{"ID":"queryCol_5","Name":"DIAGNOSIS","DataType":"Text","Index":5,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <FunctionMapNode id="0" L0="1" L1="2" L2="3" L3="4" L4="5" L5="6" R0="7" partID="52" topLabel="k2_concat5 (52)" pos="298.985382 223.653671" size="138.492859 97.52864" isRoot="false">
+        <KFunction>{"Name":"k2_concat5","ID":"f_52","Category":"String","FunctionLevel":1,"FunctionType":0,"FunctionType2":0,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"Concatenate up-to 5 strings with defined delimiter","Language":1,"IsRootFunction":false,"inputParams":[{"Name":"i_str1","ID":"fi_52.0","Index":0,"DataType":"String","MapDefaultValue":"V"},{"Name":"i_str2","ID":"fi_52.1","Index":1,"DataType":"String"},{"Name":"i_str3","ID":"fi_52.2","Index":2,"DataType":"String"},{"Name":"i_str4","ID":"fi_52.3","Index":3,"DataType":"String"},{"Name":"i_str5","ID":"fi_52.4","Index":4,"DataType":"String"},{"Name":"i_delimiter","ID":"fi_52.5","Index":5,"DataType":"String"}],"outputParams":[{"Name":"o_str1","ID":"fo_52.0","Index":0,"DataType":"String","Comment":""}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link partID="16" from="8" to="9" pointsArr="263 36.81771 273 36.81771 313 37 333 37 373.000031 36.7812538 383.000031 36.7812538" fromNodePartID="9" fromNodeColumnName="PATIENT_ID" toNodePartID="0" toNodeColumnName="PATIENT_ID" />
+      <Link partID="17" from="10" to="11" pointsArr="263 48.890625 273 48.890625 313 49 333 49 373.000031 48.85417 383.000031 48.85417" fromNodePartID="9" fromNodeColumnName="VISIT_ID" toNodePartID="0" toNodeColumnName="VISIT_ID" />
+      <Link partID="18" from="12" to="13" pointsArr="263 60.96354 273 60.96354 313 61 333 61 373.000031 60.9270859 383.000031 60.9270859" fromNodePartID="9" fromNodeColumnName="VISIT_DATE" toNodePartID="0" toNodeColumnName="VISIT_DATE" />
+      <Link partID="19" from="14" to="15" pointsArr="263 73.03645 273 73.03645 313 73 333 73 373.000031 73 383.000031 73" fromNodePartID="9" fromNodeColumnName="STATUS" toNodePartID="0" toNodeColumnName="STATUS" />
+      <Link partID="20" from="16" to="17" pointsArr="263 85.109375 273 85.109375 313 85 333 85 373.000031 85.0729141 383.000031 85.0729141" fromNodePartID="9" fromNodeColumnName="PHYSICIAN" toNodePartID="0" toNodeColumnName="PHYSICIAN" />
+      <Link partID="21" from="18" to="19" pointsArr="263 97.18228 273 97.18228 313 97 333 97 373.000031 97.14583 383.000031 97.14583" fromNodePartID="9" fromNodeColumnName="DIAGNOSIS" toNodePartID="0" toNodeColumnName="DIAGNOSIS" />
+      <Link partID="60" from="10" to="2" pointsArr="263 48.890625 273 48.890625 288.985382 256.8542 298.985382 256.8542" fromNodePartID="9" fromNodeColumnName="VISIT_ID" toNodePartID="52" toNodeColumnName="i_str2" />
+      <Link partID="61" from="7" to="20" pointsArr="437.478241 274.963562 447.478241 274.963562 373.000031 109.21875 383.000031 109.21875" fromNodePartID="52" fromNodeColumnName="o_str1" toNodePartID="0" toNodeColumnName="PREFIXED_VISIT_ID" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

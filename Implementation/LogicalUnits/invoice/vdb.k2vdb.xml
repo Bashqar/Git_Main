@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.0.5.4">
+  <Name>vdb</Name>
+  <RootView>PATIENT</RootView>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" />
+  <Tables>
+    <Table>PATIENT</Table>
+    <Table>INVOICE_DATA</Table>
+  </Tables>
+  <TablesProperties>
+    <TableProperties name="PATIENT">
+      <Populations>
+        <Population id="query_PATIENT" name="query_PATIENT" order="1" disabled="false" enrichment="false" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="INVOICE_DATA">
+      <Populations>
+        <Population id="popInvData" name="popInvData" order="2" disabled="false" enrichment="false" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList />
+  <ReferencesList>
+    <Item active="false" name="ref_medication_reference" />
+  </ReferencesList>
+  <Relations />
+  <DatabaseRelations>
+    <Relation id="160">
+      <From tableType="TableObject" table="PATIENT" column="SSN" columnId="tblCol_95182f8dc4874a7ca9dde84d180470f4" />
+      <To tableType="TableObject" table="INVOICE_DATA" populationObjectName="popInvData" column="inp" columnId="fi_7.0" />
+    </Relation>
+  </DatabaseRelations>
+  <PreVCsSqlScript />
+  <PostVCsSqlScript />
+  <Indexes />
+  <LudbProperties />
+  <DiagramGraph>
+    <Graph version="4.0.5.4" name="vdb.k2vdb.xml" lastPartID="192">
+      <Node id="0" partID="0" name="PATIENT" isRootView="true" pos="11 14" size="257 137.546875" listGroupSize="250 100" viewType="Table">
+        <TableProperties>{"TableName":"PATIENT","TablePopulationPropertiesList":[{"ID":"query_PATIENT","Name":"query_PATIENT","Order":1,"Disabled":false,"IsEnrichment":false}]}</TableProperties>
+      </Node>
+      <Node id="1" partID="147" name="INVOICE_DATA" isRootView="false" pos="325 13" size="257 136" listGroupSize="250 100" viewType="Table">
+        <TableProperties>{"TableName":"INVOICE_DATA","TablePopulationPropertiesList":[{"ID":"popInvData","Name":"popInvData","Order":2,"Disabled":false,"IsEnrichment":false}]}</TableProperties>
+      </Node>
+      <Link from="2" to="3" partID="160" linkType="Database" pointsArr="268 75.63672 278 75.63672 315 58.5455627 325 58.5455627" fromNodePartID="0" fromNodeColumnName="SSN" toNodePartID="147" toNodeColumnName="inp" toNodePopulationObjectName="popInvData" />
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>PATIENT</Name>
+  <ID>tbl_PATIENT</ID>
+  <EntityId>tblCol_5f83be19ca7d40648c6fea7b59bab076</EntityId>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="PATIENT_ID" id="tblCol_55dd920f127742959358b7bc754b7e15" index="0" datatype="integer" mandatory="true" />
+    <Column name="SSN" id="tblCol_5f83be19ca7d40648c6fea7b59bab076" index="1" datatype="Text" />
+    <Column name="FIRST_NAME" id="tblCol_114e1887c04045e6b86d6f0158a26905" index="2" datatype="Text" />
+    <Column name="LAST_NAME" id="tblCol_0c93779346f0476b9a425f23123ed524" index="3" datatype="Text" />
+    <Column name="ADDRESS" id="tblCol_3747e4ccde894d7c86902c9d3cfd67c8" index="4" datatype="Text" />
+    <Column name="CITY" id="tblCol_e2918239c29540e2b25d7e050d4597e3" index="5" datatype="Text" />
+    <Column name="ZIP" id="tblCol_bcf2bb1ac3684de9a351cb5ec0b13524" index="6" datatype="Text" />
+    <Column name="STATE" id="tblCol_036bd3dbc1a34e2e948cb867ed47c90f" index="7" datatype="Text" />
+    <Column name="COUNTRY" id="tblCol_fe8daa4299434a87b244b7957a2c78bd" index="8" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_55dd920f127742959358b7bc754b7e15" />
+  </IndexesList>
+  <EnrichmentList />
+</TableObject>

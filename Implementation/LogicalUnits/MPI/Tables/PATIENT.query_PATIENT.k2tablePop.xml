@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_PATIENT</ID>
+  <PopulationObjectName>query_PATIENT</PopulationObjectName>
+  <TableName>PATIENT</TableName>
+  <RootItemID>query_query_PATIENT</RootItemID>
+  <Mode>Upsert</Mode>
+  <LazyDataUpdate syncMethod="TimeInterval" performEvery="00:00:03">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <InputArguments>
+    <Arg name="SSN" id="queryCol_1" dataType="Text" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_PATIENT" name="query_PATIENT" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="HIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="PATIENT_ID" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="SSN" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="FIRST_NAME" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="LAST_NAME" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="ADDRESS" dataType="Text" index="4" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_5" name="CITY" dataType="Text" index="5" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_6" name="ZIP" dataType="Text" index="6" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_7" name="STATE" dataType="Text" index="7" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_8" name="COUNTRY" dataType="Text" index="8" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM PATIENT]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="22" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_0" toItemID="tbl_PATIENT" toColID="tblCol_55dd920f127742959358b7bc754b7e15" />
+    <Link partId="23" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_1" toItemID="tbl_PATIENT" toColID="tblCol_5f83be19ca7d40648c6fea7b59bab076" />
+    <Link partId="24" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_2" toItemID="tbl_PATIENT" toColID="tblCol_114e1887c04045e6b86d6f0158a26905" />
+    <Link partId="25" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_3" toItemID="tbl_PATIENT" toColID="tblCol_0c93779346f0476b9a425f23123ed524" />
+    <Link partId="26" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_4" toItemID="tbl_PATIENT" toColID="tblCol_3747e4ccde894d7c86902c9d3cfd67c8" />
+    <Link partId="27" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_5" toItemID="tbl_PATIENT" toColID="tblCol_e2918239c29540e2b25d7e050d4597e3" />
+    <Link partId="28" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_6" toItemID="tbl_PATIENT" toColID="tblCol_bcf2bb1ac3684de9a351cb5ec0b13524" />
+    <Link partId="29" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_7" toItemID="tbl_PATIENT" toColID="tblCol_036bd3dbc1a34e2e948cb867ed47c90f" />
+    <Link partId="30" fromNodeOrder="0" fromItemID="query_query_PATIENT" fromColID="queryCol_8" toItemID="tbl_PATIENT" toColID="tblCol_fe8daa4299434a87b244b7957a2c78bd" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="PATIENT.query_PATIENT.k2tablePop.xml" lastPartID="110">
+      <TableNode partID="0" name="PATIENT" pos="382.550385 5.63542938" width="309.773834" />
+      <DBQueryNode partID="12" name="HIS_DB" pos="10 0.6718826" size="253 168.65625" isRoot="true">
+        <DBQuery>{"Name":"query_PATIENT","ID":"query_query_PATIENT","ConnName":"HIS_DB","SQL":"SELECT * FROM PATIENT","ColumnsList":[{"ID":"queryCol_0","Name":"PATIENT_ID","DataType":"Text","Index":0,"IsInputArgument":false},{"ID":"queryCol_1","Name":"SSN","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"FIRST_NAME","DataType":"Text","Index":2,"IsInputArgument":false},{"ID":"queryCol_3","Name":"LAST_NAME","DataType":"Text","Index":3,"IsInputArgument":false},{"ID":"queryCol_4","Name":"ADDRESS","DataType":"Text","Index":4,"IsInputArgument":false},{"ID":"queryCol_5","Name":"CITY","DataType":"Text","Index":5,"IsInputArgument":false},{"ID":"queryCol_6","Name":"ZIP","DataType":"Text","Index":6,"IsInputArgument":false},{"ID":"queryCol_7","Name":"STATE","DataType":"Text","Index":7,"IsInputArgument":false},{"ID":"queryCol_8","Name":"COUNTRY","DataType":"Text","Index":8,"IsInputArgument":false}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="22" from="0" to="1" pointsArr="263 36.7083473 273 36.7083473 372.550385 36.6718864 382.550385 36.6718864" fromNodePartID="12" fromNodeColumnName="PATIENT_ID" toNodePartID="0" toNodeColumnName="PATIENT_ID" />
+      <Link partID="23" from="2" to="3" pointsArr="263 48.7812653 273 48.7812653 372.550385 48.7448044 382.550385 48.7448044" fromNodePartID="12" fromNodeColumnName="SSN" toNodePartID="0" toNodeColumnName="SSN" />
+      <Link partID="24" from="4" to="5" pointsArr="263 60.85418 273 60.85418 372.550385 60.81772 382.550385 60.81772" fromNodePartID="12" fromNodeColumnName="FIRST_NAME" toNodePartID="0" toNodeColumnName="FIRST_NAME" />
+      <Link partID="25" from="6" to="7" pointsArr="263 72.92709 273 72.92709 372.550385 72.89063 382.550385 72.89063" fromNodePartID="12" fromNodeColumnName="LAST_NAME" toNodePartID="0" toNodeColumnName="LAST_NAME" />
+      <Link partID="26" from="8" to="9" pointsArr="263 85.00001 273 85.00001 372.550385 84.96355 382.550385 84.96355" fromNodePartID="12" fromNodeColumnName="ADDRESS" toNodePartID="0" toNodeColumnName="ADDRESS" />
+      <Link partID="27" from="10" to="11" pointsArr="263 97.07292 273 97.07292 372.550385 97.03646 382.550385 97.03646" fromNodePartID="12" fromNodeColumnName="CITY" toNodePartID="0" toNodeColumnName="CITY" />
+      <Link partID="28" from="12" to="13" pointsArr="263 109.145844 273 109.145844 372.550385 109.109383 382.550385 109.109383" fromNodePartID="12" fromNodeColumnName="ZIP" toNodePartID="0" toNodeColumnName="ZIP" />
+      <Link partID="29" from="14" to="15" pointsArr="263 121.218765 273 121.218765 372.550385 121.182304 382.550385 121.182304" fromNodePartID="12" fromNodeColumnName="STATE" toNodePartID="0" toNodeColumnName="STATE" />
+      <Link partID="30" from="16" to="17" pointsArr="263 133.291687 273 133.291687 372.550385 133.255219 382.550385 133.255219" fromNodePartID="12" fromNodeColumnName="COUNTRY" toNodePartID="0" toNodeColumnName="COUNTRY" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>INVOICE</Name>
+  <ID>tbl_INVOICE</ID>
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnPopDecision</DecisionFunction>
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="PATIENT_ID" id="tblCol_90bd746de9c14fcd8025b350bef68569" index="0" datatype="Text" />
+    <Column name="INVOICE_ID" id="tblCol_97cdeb2405324dabaa88f0962b5dae15" index="1" datatype="Text" mandatory="true" />
+    <Column name="ISSUED_DATE" id="tblCol_ce5aedb3a97c438498829bcddc460f64" index="2" datatype="Text" />
+    <Column name="DUE_DATE" id="tblCol_a96e677189684e85a1a4c77803a53a6d" index="3" datatype="Text" />
+    <Column name="STATUS" id="tblCol_6760e5593cc44d63a1a39e490639a689" index="4" datatype="Text" />
+    <Column name="BALANCE" id="tblCol_7b14f4238b6041468cf364e9a7e6930f" index="5" datatype="Real" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="tblCol_97cdeb2405324dabaa88f0962b5dae15" />
+  </IndexesList>
+  <EnrichmentList>
+    <Enrichment>
+      <Name>fnBarrierDate</Name>
+      <Type>Function</Type>
+      <TableName>INVOICE</TableName>
+    </Enrichment>
+  </EnrichmentList>
+</TableObject>

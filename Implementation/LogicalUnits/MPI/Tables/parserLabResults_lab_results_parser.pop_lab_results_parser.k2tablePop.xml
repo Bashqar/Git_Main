@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>pop_lab_results_parser</ID>
+  <PopulationObjectName>pop_lab_results_parser</PopulationObjectName>
+  <TableName>parserLabResults_lab_results_parser</TableName>
+  <RootItemID>rt_lab_results_parser</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="visit_id" id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" dataType="Text" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="ParserRecordTypeDataSave" id="rt_lab_results_parser" name="lab_results_parser" nodeOrder="0" module="ParserRecordType" mapObjectModule="ParserRecordType" parentParser="parserLabResults" deleteRecordsAfterSync="false">
+      <InputsList />
+      <OutputsList>
+        <Output xsi:type="ParserRecordTypeDataSaveColumn" id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" dataType="Text" />
+        <Output xsi:type="ParserRecordTypeDataSaveColumn" id="rtCol_d9972e57087849658600826dc1de1893" name="lab_id" dataType="Text" />
+        <Output xsi:type="ParserRecordTypeDataSaveColumn" id="rtCol_cdb56f51cb584a339294f4ec5f4814fe" name="lab_type" dataType="Text" />
+        <Output xsi:type="ParserRecordTypeDataSaveColumn" id="rtCol_bc96a760b447450f8a131fa5cf7af0ba" name="lab_date" dataType="Text" />
+      </OutputsList>
+      <RecordTypeKeyColumn />
+      <PkColumnsList>
+        <RecordTypePkColumn id="rtCol_b4ea3cb26ec0431f9180efad5583ceca" name="visit_id" pkType="Partition_Key" />
+      </PkColumnsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="12" fromNodeOrder="0" fromItemID="rt_lab_results_parser" fromColID="rtCol_b4ea3cb26ec0431f9180efad5583ceca" toItemID="tbl_parserLabResults_lab_results_parser" toColID="tblCol_196eb07b60f94a8baccaf5c062b8cbf4" />
+    <Link partId="13" fromNodeOrder="0" fromItemID="rt_lab_results_parser" fromColID="rtCol_d9972e57087849658600826dc1de1893" toItemID="tbl_parserLabResults_lab_results_parser" toColID="tblCol_6cdbd1fda5b648c9961abed2c47de77e" />
+    <Link partId="15" fromNodeOrder="0" fromItemID="rt_lab_results_parser" fromColID="rtCol_cdb56f51cb584a339294f4ec5f4814fe" toItemID="tbl_parserLabResults_lab_results_parser" toColID="tblCol_454f3821732e426b965c93947395e976" />
+    <Link partId="14" fromNodeOrder="0" fromItemID="rt_lab_results_parser" fromColID="rtCol_bc96a760b447450f8a131fa5cf7af0ba" toItemID="tbl_parserLabResults_lab_results_parser" toColID="tblCol_daf0f7d3abaf4a34bc352b30ad7cb5e3" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="parserLabResults_lab_results_parser.pop_lab_results_parser.k2tablePop.xml" lastPartID="65">
+      <TableNode partID="0" name="parserLabResults_lab_results_parser" pos="436.9767 2.81771469" width="310.6716" />
+      <ParserRecordTypeTargetNode partID="7" name="lab_results_parser" pos="9.999985 0.854171753" size="309.3241 98.29166" parserName="parserLabResults" isTargetNode="false" isRoot="true" deleteRecordsAfterSync="false" />
+      <Link partID="12" from="0" to="1" pointsArr="319.3241 31.8906269 329.3241 31.8906269 426.9767 33.85417 436.9767 33.85417" fromNodePartID="7" fromNodeColumnName="visit_id" toNodePartID="0" toNodeColumnName="visit_id" />
+      <Link partID="13" from="2" to="3" pointsArr="319.3241 43.9635429 329.3241 43.9635429 426.9767 45.9270859 436.9767 45.9270859" fromNodePartID="7" fromNodeColumnName="lab_id" toNodePartID="0" toNodeColumnName="lab_id" />
+      <Link partID="15" from="4" to="5" pointsArr="319.3241 56.0364571 329.3241 56.0364571 426.9767 58 436.9767 58" fromNodePartID="7" fromNodeColumnName="lab_type" toNodePartID="0" toNodeColumnName="lab_type" />
+      <Link partID="14" from="6" to="7" pointsArr="319.3241 68.109375 329.3241 68.109375 426.9767 70.0729141 436.9767 70.0729141" fromNodePartID="7" fromNodeColumnName="lab_date" toNodePartID="0" toNodeColumnName="lab_date" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>INVOICE_DATA</Name>
+  <ID>tbl_INVOICE_DATA</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="INVOICE_ID" id="tblCol_886e6b642b944272b2c08d5a42bcf50f" index="0" datatype="text" />
+    <Column name="DUE_DATE" id="tblCol_325b2e936cf4447cb8558e5051e6bb63" index="1" datatype="text" />
+    <Column name="STATUS" id="tblCol_8452466d81624042816455b16a96b735" index="2" datatype="text" />
+    <Column name="BALANCE" id="tblCol_be8c29a473314912a2009143fda9f851" index="3" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

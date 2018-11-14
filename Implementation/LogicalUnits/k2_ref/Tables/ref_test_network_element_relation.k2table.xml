@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>ref_test_network_element_relation</Name>
+  <ID>tbl_ref_test_network_element_relation</ID>
+  <EntityId>tblCol_7f920a7c09a347e38a9447b95d551b7f</EntityId>
+  <LazyDataUpdate syncMethod="None" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="neid_value" id="tblCol_7f920a7c09a347e38a9447b95d551b7f" index="0" datatype="text" mandatory="true" />
+    <Column name="service_id" id="tblCol_4f169ad15bd347d98d426948488067f0" index="1" datatype="text" mandatory="true" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

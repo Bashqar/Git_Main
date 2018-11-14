@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_INVOICE</ID>
+  <PopulationObjectName>query_INVOICE</PopulationObjectName>
+  <TableName>INVOICE</TableName>
+  <RootItemID>query_query_INVOICE</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <InputArguments>
+    <Arg name="PATIENT_ID" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="INVOICE_ID" id="queryCol_1" dataType="Text" index="1" />
+    <Arg name="ISSUED_DATE" id="queryCol_2" dataType="Text" index="2" />
+    <Arg name="DUE_DATE" id="queryCol_3" dataType="Text" index="3" />
+    <Arg name="STATUS" id="queryCol_4" dataType="Text" index="4" />
+    <Arg name="BALANCE" id="queryCol_5" dataType="Real" index="5" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_INVOICE" name="query_INVOICE" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="HIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="PATIENT_ID" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="INVOICE_ID" dataType="Text" index="1" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_2" name="ISSUED_DATE" dataType="Text" index="2" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_3" name="DUE_DATE" dataType="Text" index="3" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_4" name="STATUS" dataType="Text" index="4" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_5" name="BALANCE" dataType="Real" index="5" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM INVOICE]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="16" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_0" toItemID="tbl_INVOICE" toColID="tblCol_90bd746de9c14fcd8025b350bef68569" />
+    <Link partId="17" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_1" toItemID="tbl_INVOICE" toColID="tblCol_97cdeb2405324dabaa88f0962b5dae15" />
+    <Link partId="18" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_2" toItemID="tbl_INVOICE" toColID="tblCol_ce5aedb3a97c438498829bcddc460f64" />
+    <Link partId="19" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_3" toItemID="tbl_INVOICE" toColID="tblCol_a96e677189684e85a1a4c77803a53a6d" />
+    <Link partId="20" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_4" toItemID="tbl_INVOICE" toColID="tblCol_6760e5593cc44d63a1a39e490639a689" />
+    <Link partId="21" fromNodeOrder="0" fromItemID="query_query_INVOICE" fromColID="queryCol_5" toItemID="tbl_INVOICE" toColID="tblCol_7b14f4238b6041468cf364e9a7e6930f" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="INVOICE.query_INVOICE.k2tablePop.xml" lastPartID="105">
+      <TableNode partID="0" name="INVOICE" pos="386.000031 7.74479675" width="309.3242" />
+      <DBQueryNode partID="9" name="HIS_DB" pos="11 5.78125" size="253 132.4375" isRoot="true">
+        <DBQuery>{"Name":"query_INVOICE","ID":"query_query_INVOICE","ConnName":"HIS_DB","SQL":"SELECT * FROM INVOICE","ColumnsList":[{"ID":"queryCol_0","Name":"PATIENT_ID","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"INVOICE_ID","DataType":"Text","Index":1,"IsInputArgument":true},{"ID":"queryCol_2","Name":"ISSUED_DATE","DataType":"Text","Index":2,"IsInputArgument":true},{"ID":"queryCol_3","Name":"DUE_DATE","DataType":"Text","Index":3,"IsInputArgument":true},{"ID":"queryCol_4","Name":"STATUS","DataType":"Text","Index":4,"IsInputArgument":true},{"ID":"queryCol_5","Name":"BALANCE","DataType":"Real","Index":5,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="16" from="0" to="1" pointsArr="264 41.81771 274 41.81771 376.000031 38.7812538 386.000031 38.7812538" fromNodePartID="9" fromNodeColumnName="PATIENT_ID" toNodePartID="0" toNodeColumnName="PATIENT_ID" />
+      <Link partID="17" from="2" to="3" pointsArr="264 53.890625 274 53.890625 376.000031 50.85417 386.000031 50.85417" fromNodePartID="9" fromNodeColumnName="INVOICE_ID" toNodePartID="0" toNodeColumnName="INVOICE_ID" />
+      <Link partID="18" from="4" to="5" pointsArr="264 65.96354 274 65.96354 376.000031 62.9270859 386.000031 62.9270859" fromNodePartID="9" fromNodeColumnName="ISSUED_DATE" toNodePartID="0" toNodeColumnName="ISSUED_DATE" />
+      <Link partID="19" from="6" to="7" pointsArr="264 78.03645 274 78.03645 376.000031 75 386.000031 75" fromNodePartID="9" fromNodeColumnName="DUE_DATE" toNodePartID="0" toNodeColumnName="DUE_DATE" />
+      <Link partID="20" from="8" to="9" pointsArr="264 90.109375 274 90.109375 376.000031 87.0729141 386.000031 87.0729141" fromNodePartID="9" fromNodeColumnName="STATUS" toNodePartID="0" toNodeColumnName="STATUS" />
+      <Link partID="21" from="10" to="11" pointsArr="264 102.182281 274 102.182281 376.000031 99.14583 386.000031 99.14583" fromNodePartID="9" fromNodeColumnName="BALANCE" toNodePartID="0" toNodeColumnName="BALANCE" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

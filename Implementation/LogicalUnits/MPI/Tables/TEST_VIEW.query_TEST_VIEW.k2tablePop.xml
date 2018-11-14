@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>query_TEST_VIEW</ID>
+  <PopulationObjectName>query_TEST_VIEW</PopulationObjectName>
+  <TableName>TEST_VIEW</TableName>
+  <RootItemID>query_query_TEST_VIEW</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <InputArguments>
+    <Arg name="COL_1" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="COL_2" id="queryCol_1" dataType="Text" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_TEST_VIEW" name="query_TEST_VIEW" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="HIS_DB">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="COL_1" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="COL_2" dataType="Text" index="1" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM TEST_VIEW]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="8" fromNodeOrder="0" fromItemID="query_query_TEST_VIEW" fromColID="queryCol_0" toItemID="tbl_TEST_VIEW" toColID="tblCol_7ee26d315ba04bfd9a0ec12c5a71423c" />
+    <Link partId="9" fromNodeOrder="0" fromItemID="query_query_TEST_VIEW" fromColID="queryCol_1" toItemID="tbl_TEST_VIEW" toColID="tblCol_75d9abb0a898402d900c4bf52229e924" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="TEST_VIEW.query_TEST_VIEW.k2tablePop.xml" lastPartID="15">
+      <TableNode partID="0" name="TEST_VIEW" pos="383.000031 5.890629" width="309.3242" />
+      <DBQueryNode partID="5" name="HIS_DB" pos="10 0.9270859" size="253 84.14583" isRoot="true">
+        <DBQuery>{"Name":"query_TEST_VIEW","ID":"query_query_TEST_VIEW","ConnName":"HIS_DB","SQL":"SELECT * FROM TEST_VIEW","ColumnsList":[{"ID":"queryCol_0","Name":"COL_1","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"COL_2","DataType":"Text","Index":1,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="8" from="0" to="1" pointsArr="263 36.9635429 273 36.9635429 313 37 333 37 373.000031 36.9270859 383.000031 36.9270859" fromNodePartID="5" fromNodeColumnName="COL_1" toNodePartID="0" toNodeColumnName="COL_1" />
+      <Link partID="9" from="2" to="3" pointsArr="263 49.03646 273 49.03646 313 49 333 49 373.000031 49 383.000031 49" fromNodePartID="5" fromNodeColumnName="COL_2" toNodePartID="0" toNodeColumnName="COL_2" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

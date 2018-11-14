@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>popFromView</ID>
+  <PopulationObjectName>popFromView</PopulationObjectName>
+  <TableName>TEST_VIEW</TableName>
+  <RootItemID>f_5</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="inSSN" id="fi_5.0" dataType="String" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item id="f_5" name="fnPopFromView" nodeOrder="0" module="Function" mapObjectModule="Function" fileName="fnPopFromView.k2function.xml">
+      <InputsList>
+        <Input id="fi_5.0" name="inSSN" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_5.0" name="ssn" />
+        <Output id="fo_5.1" name="patient_id" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="12" fromNodeOrder="0" fromItemID="f_5" fromColID="fo_5.0" toItemID="tbl_TEST_VIEW" toColID="tblCol_7ee26d315ba04bfd9a0ec12c5a71423c" />
+    <Link partId="13" fromNodeOrder="0" fromItemID="f_5" fromColID="fo_5.1" toItemID="tbl_TEST_VIEW" toColID="tblCol_75d9abb0a898402d900c4bf52229e924" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="TEST_VIEW.popFromView.k2tablePop.xml" lastPartID="13">
+      <TableNode partID="0" name="TEST_VIEW" pos="364 122" width="309.3241" />
+      <FunctionMapNode id="0" R0="1" R1="2" L0="3" partID="5" topLabel="fnPopFromView (5)" pos="55 117" size="155.432465 49.23697" isRoot="true">
+        <KFunction>{"Name":"fnPopFromView","ID":"f_5","Category":"Root","Version":"4.0.6.2","FunctionLevel":0,"FunctionType":0,"FunctionType2":1,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":true,"inputParams":[{"Name":"inSSN","ID":"fi_5.0","Index":0,"DataType":"String"}],"outputParams":[{"Name":"ssn","ID":"fo_5.0","Index":0,"DataType":"String"},{"Name":"patient_id","ID":"fo_5.1","Index":1,"DataType":"String"}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link partID="12" from="1" to="4" pointsArr="210.432465 138.1276 220.432465 138.1276 354 153.036453 364 153.036453" fromNodePartID="5" fromNodeColumnName="ssn" toNodePartID="0" toNodeColumnName="COL_1" />
+      <Link partID="13" from="2" to="5" pointsArr="210.432465 150.200516 220.432465 150.200516 354 165.109375 364 165.109375" fromNodePartID="5" fromNodeColumnName="patient_id" toNodePartID="0" toNodeColumnName="COL_2" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

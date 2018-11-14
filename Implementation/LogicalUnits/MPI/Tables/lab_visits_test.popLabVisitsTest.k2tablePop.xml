@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>popLabVisitsTest</ID>
+  <PopulationObjectName>popLabVisitsTest</PopulationObjectName>
+  <TableName>lab_visits_test</TableName>
+  <RootItemID>f_5</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="visit_id" id="fi_5.0" dataType="String" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item id="f_5" name="fnPopLabVisitsTest" nodeOrder="0" module="Function" mapObjectModule="Function" fileName="fnPopLabVisitsTest.k2function.xml">
+      <InputsList>
+        <Input id="fi_5.0" name="visit_id" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_5.0" name="lab_id" />
+        <Output id="fo_5.1" name="visit_id" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="10" fromNodeOrder="0" fromItemID="f_5" fromColID="fo_5.0" toItemID="tbl_lab_visits_test" toColID="tblCol_395896b801054a2d82bf935fafc6f959" />
+    <Link partId="11" fromNodeOrder="0" fromItemID="f_5" fromColID="fo_5.1" toItemID="tbl_lab_visits_test" toColID="tblCol_717311c1228c4664b5e77b93dd10f3e5" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="lab_visits_test.popLabVisitsTest.k2tablePop.xml" lastPartID="11">
+      <TableNode partID="0" name="lab_visits_test" pos="384 109" width="309.3241" />
+      <FunctionMapNode id="0" L0="1" R0="2" R1="3" partID="5" topLabel="fnPopLabVisitsTest (5)" pos="111 124" size="156.067932 49.23697" isRoot="true">
+        <KFunction>{"Name":"fnPopLabVisitsTest","ID":"f_5","Category":"Root","Version":"4.0.6.2","FunctionLevel":0,"FunctionType":0,"FunctionType2":1,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":true,"inputParams":[{"Name":"visit_id","ID":"fi_5.0","Index":0,"DataType":"String"}],"outputParams":[{"Name":"lab_id","ID":"fo_5.0","Index":0,"DataType":"String","Comment":""},{"Name":"visit_id","ID":"fo_5.1","Index":1,"DataType":"String"}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link partID="10" from="2" to="4" pointsArr="267.067932 145.1276 277.067932 145.1276 374 140.036453 384 140.036453" fromNodePartID="5" fromNodeColumnName="lab_id" toNodePartID="0" toNodeColumnName="visit_id" />
+      <Link partID="11" from="3" to="5" pointsArr="267.067932 157.200516 277.067932 157.200516 374 152.109375 384 152.109375" fromNodePartID="5" fromNodeColumnName="visit_id" toNodePartID="0" toNodeColumnName="lab_id" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

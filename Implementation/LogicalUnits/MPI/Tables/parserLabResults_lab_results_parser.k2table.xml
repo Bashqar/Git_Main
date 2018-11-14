@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>parserLabResults_lab_results_parser</Name>
+  <ID>tbl_parserLabResults_lab_results_parser</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="visit_id" id="tblCol_196eb07b60f94a8baccaf5c062b8cbf4" index="0" datatype="Text" />
+    <Column name="lab_id" id="tblCol_6cdbd1fda5b648c9961abed2c47de77e" index="1" datatype="Text" />
+    <Column name="lab_type" id="tblCol_454f3821732e426b965c93947395e976" index="2" datatype="Text" />
+    <Column name="lab_date" id="tblCol_daf0f7d3abaf4a34bc352b30ad7cb5e3" index="3" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

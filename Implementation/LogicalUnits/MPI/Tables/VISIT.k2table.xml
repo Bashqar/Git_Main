@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>VISIT</Name>
+  <ID>tbl_VISIT</ID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>true</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <Columns>
+    <Column name="PATIENT_ID" id="tblCol_67a8ac9c209e4ef481794a64d3320256" index="0" datatype="Text" />
+    <Column name="VISIT_ID" id="tblCol_5328a72121fe4b57bede89e9a12a1588" index="1" datatype="Text" />
+    <Column name="VISIT_DATE" id="tblCol_2e1008a2667a43efb3f498591c043939" index="2" datatype="Text" />
+    <Column name="STATUS" id="tblCol_d2e74f57d0dd444889d98e2bbfa744f9" index="3" datatype="Text" />
+    <Column name="PHYSICIAN" id="tblCol_95c4d6cee9b348478179152357239bb1" index="4" datatype="Text" />
+    <Column name="DIAGNOSIS" id="tblCol_3c9ede5230c04767b033d4ab4f5c0e3b" index="5" datatype="Text" />
+    <Column name="PREFIXED_VISIT_ID" id="tblCol_993436edfbcc428babcf6da57f13d107" index="6" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+</TableObject>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBConn xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="DBConnCassandra" name="dbCassandra" type="Cassandra" version="4.0.6.2">
+  <Active>true</Active>
+  <DataSource>192.168.136.129</DataSource>
+  <PortNum>9042</PortNum>
+  <UserId>admin</UserId>
+  <Password>aQ3cUrl+xLcdH3utM96nsnUYn9BzgHwELK8W+M3e5kQ=:OOXyJ1Vs/AZLmr9k1ED21hia3yByLLz1PosW4Uskd7Y=</Password>
+  <MinConnectionsNumber>0</MinConnectionsNumber>
+  <MaxConnectionsNumber>60</MaxConnectionsNumber>
+  <ConnectionStringClient>Contact Points='192.168.136.129';Port=9042;Default Keyspace='';Username='admin';Password='[PASSWORD]';</ConnectionStringClient>
+  <ConnectionStringServerSide>jdbc:cassandra://192.168.136.129:9042?consistency=QUORUM&amp;loadbalancing=com.k2view.cdbms.policy.SingleNodePolicy('192.168.136.129',9042)</ConnectionStringServerSide>
+  <UseSelectAsteriskInAutoCreatedQueries>true</UseSelectAsteriskInAutoCreatedQueries>
+  <AutomaticMetadataLoading>false</AutomaticMetadataLoading>
+  <CommandList />
+  <DBSourceList />
+</DBConn>

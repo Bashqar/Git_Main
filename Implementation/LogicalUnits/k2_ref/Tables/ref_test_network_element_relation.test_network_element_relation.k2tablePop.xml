@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>test_network_element_relation</ID>
+  <PopulationObjectName>test_network_element_relation</PopulationObjectName>
+  <TableName>ref_test_network_element_relation</TableName>
+  <RootItemID>query_query_k2view_mpi_ref_neid_sid</RootItemID>
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>true</SimpleObject>
+  <InputArguments>
+    <Arg name="neid_value" id="queryCol_0" dataType="Text" index="0" />
+    <Arg name="service_id" id="queryCol_1" dataType="Text" index="1" />
+  </InputArguments>
+  <ItemsList>
+    <Item xsi:type="DBQueryDataSave" id="query_query_k2view_mpi_ref_neid_sid" name="query_k2view_mpi_ref_neid_sid" nodeOrder="0" module="DBQuery" mapObjectModule="DBQuery" connName="dbCassandra">
+      <OutputsList>
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_0" name="neid_value" dataType="Text" index="0" />
+        <Output xsi:type="DBQueryDataSaveColumn" id="queryCol_1" name="service_id" dataType="Text" index="1" />
+      </OutputsList>
+      <SQL><![CDATA[SELECT * FROM k2view_mpi.ref_neid_sid]]></SQL>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="8" fromNodeOrder="0" fromItemID="query_query_k2view_mpi_ref_neid_sid" fromColID="queryCol_0" toItemID="tbl_ref_test_network_element_relation" toColID="tblCol_7f920a7c09a347e38a9447b95d551b7f" />
+    <Link partId="9" fromNodeOrder="0" fromItemID="query_query_k2view_mpi_ref_neid_sid" fromColID="queryCol_1" toItemID="tbl_ref_test_network_element_relation" toColID="tblCol_4f169ad15bd347d98d426948488067f0" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="ref_test_network_element_relation.test_network_element_relation.k2tablePop.xml" lastPartID="9">
+      <TableNode partID="0" name="ref_test_network_element_relation" pos="394 133" width="309.3241" />
+      <DBQueryNode partID="5" name="dbCassandra" pos="55 118" size="258.18 84.14583" isRoot="true">
+        <DBQuery>{"Name":"query_k2view_mpi_ref_neid_sid","ID":"query_query_k2view_mpi_ref_neid_sid","ConnName":"dbCassandra","SQL":"SELECT * FROM k2view_mpi.ref_neid_sid","ColumnsList":[{"ID":"queryCol_0","Name":"neid_value","DataType":"Text","Index":0,"IsInputArgument":true},{"ID":"queryCol_1","Name":"service_id","DataType":"Text","Index":1,"IsInputArgument":true}]}</DBQuery>
+      </DBQueryNode>
+      <Link partID="8" from="0" to="1" pointsArr="313.18 154.036453 323.18 154.036453 384 164.036453 394 164.036453" fromNodePartID="5" fromNodeColumnName="neid_value" toNodePartID="0" toNodeColumnName="neid_value" />
+      <Link partID="9" from="2" to="3" pointsArr="313.18 166.109375 323.18 166.109375 384 176.109375 394 176.109375" fromNodePartID="5" fromNodeColumnName="service_id" toNodePartID="0" toNodeColumnName="service_id" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

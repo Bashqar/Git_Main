@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TablePopulationObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>popInv2</ID>
+  <PopulationObjectName>popInv2</PopulationObjectName>
+  <TableName>lab_results</TableName>
+  <RootItemID>f_22</RootItemID>
+  <LazyDataUpdate syncMethod="TimeInterval" performEvery="00:00:30">
+    <TruncateBeforeSync>false</TruncateBeforeSync>
+  </LazyDataUpdate>
+  <SimpleObject>false</SimpleObject>
+  <InputArguments>
+    <Arg name="inp" id="fi_22.0" dataType="String" index="0" />
+  </InputArguments>
+  <ItemsList>
+    <Item id="f_22" name="fnPopInvoice2" nodeOrder="0" module="Function" mapObjectModule="Function" fileName="fnPopInvoice2.k2function.xml">
+      <InputsList>
+        <Input id="fi_22.0" name="inp" />
+      </InputsList>
+      <OutputsList>
+        <Output id="fo_22.0" name="visit_id" />
+      </OutputsList>
+    </Item>
+    <Item xsi:type="LookupDataSave" id="tblLookup.13" name="parserLabResults_lab_results_parser" nodeOrder="1" module="Lookup" mapObjectModule="Lookup" alias="" itemType="Table" lookupNotFound="Reject_Record" isReference="false" cacheLookupValues="false">
+      <InputsList>
+        <Input xsi:type="LookupDataSaveColumnInput" id="tblLookup.13.in.visit_id" name="visit_id" columnID="tblCol_196eb07b60f94a8baccaf5c062b8cbf4" />
+      </InputsList>
+      <OutputsList>
+        <Output xsi:type="LookupDataSaveColumn" id="tblLookup.13.out.visit_id" name="visit_id" columnID="tblCol_196eb07b60f94a8baccaf5c062b8cbf4" />
+        <Output xsi:type="LookupDataSaveColumn" id="tblLookup.13.out.lab_id" name="lab_id" columnID="tblCol_6cdbd1fda5b648c9961abed2c47de77e" />
+        <Output xsi:type="LookupDataSaveColumn" id="tblLookup.13.out.lab_type" name="lab_type" columnID="tblCol_454f3821732e426b965c93947395e976" />
+        <Output xsi:type="LookupDataSaveColumn" id="tblLookup.13.out.lab_date" name="lab_date" columnID="tblCol_daf0f7d3abaf4a34bc352b30ad7cb5e3" />
+      </OutputsList>
+    </Item>
+  </ItemsList>
+  <LinksList>
+    <Link partId="26" fromNodeOrder="1" fromItemID="tblLookup.13" fromColID="tblLookup.13.out.visit_id" toItemID="tbl_lab_results" toColID="tblCol_5882dbd2728e42ef9b5f7487d82b0750" />
+    <Link partId="25" fromNodeOrder="0" fromItemID="f_22" fromColID="fo_22.0" toItemID="tblLookup.13" toColID="tblLookup.13.in.visit_id" />
+    <Link partId="27" fromNodeOrder="1" fromItemID="tblLookup.13" fromColID="tblLookup.13.out.lab_id" toItemID="tbl_lab_results" toColID="tblCol_0f19f5449d7c420fa42b739887a27c9c" />
+    <Link partId="28" fromNodeOrder="1" fromItemID="tblLookup.13" fromColID="tblLookup.13.out.lab_date" toItemID="tbl_lab_results" toColID="tblCol_32fe2dc6d513458f923d6704beffb85a" />
+    <Link partId="29" fromNodeOrder="1" fromItemID="tblLookup.13" fromColID="tblLookup.13.out.lab_type" toItemID="tbl_lab_results" toColID="tblCol_2affcbb2d25d41b59d220147deb173ba" />
+  </LinksList>
+  <ModeKeyColumnIDs />
+  <DiagramGraph>
+    <Graph name="lab_results.popInv2.k2tablePop.xml" lastPartID="97">
+      <TableNode partID="0" name="lab_results" pos="404 30" width="309.3241" />
+      <LUDBLookupMapNode id="0" L0="2" L1="3" L2="4" L3="5" R0="6" R1="7" R2="8" R3="9" partID="13" topLabel="parserLabResults_lab_results_parser (13)" pos="74 26.90886" size="291.002563 108.291656" isMinimized="false" itemType="Table">
+        <LUDBLookupItem>{"ID":"tblLookup.13","Name":"parserLabResults_lab_results_parser","Alias":"","ItemType":3,"IsReference":false,"LookupNotFound":0,"CacheLookupValues":false,"InputColumnsMapList":[{"ID":"tblLookup.13.in.visit_id","Name":"visit_id","ColumnID":"tblCol_196eb07b60f94a8baccaf5c062b8cbf4","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":0},{"ID":"tblLookup.13.in.lab_id","Name":"lab_id","ColumnID":"tblCol_6cdbd1fda5b648c9961abed2c47de77e","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":1},{"ID":"tblLookup.13.in.lab_type","Name":"lab_type","ColumnID":"tblCol_454f3821732e426b965c93947395e976","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":2},{"ID":"tblLookup.13.in.lab_date","Name":"lab_date","ColumnID":"tblCol_daf0f7d3abaf4a34bc352b30ad7cb5e3","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":3}],"OutputColumnsMapList":[{"ID":"tblLookup.13.out.visit_id","Name":"visit_id","ColumnID":"tblCol_196eb07b60f94a8baccaf5c062b8cbf4","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":0},{"ID":"tblLookup.13.out.lab_id","Name":"lab_id","ColumnID":"tblCol_6cdbd1fda5b648c9961abed2c47de77e","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":1},{"ID":"tblLookup.13.out.lab_type","Name":"lab_type","ColumnID":"tblCol_454f3821732e426b965c93947395e976","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":2},{"ID":"tblLookup.13.out.lab_date","Name":"lab_date","ColumnID":"tblCol_daf0f7d3abaf4a34bc352b30ad7cb5e3","DataType":"Text","Index":0,"Mandatory":false,"MapIndex":3}]}</LUDBLookupItem>
+      </LUDBLookupMapNode>
+      <FunctionMapNode id="1" L0="10" R0="11" partID="22" topLabel="fnPopInvoice2 (22)" pos="23.9629269 192.908859" size="145.747147 45.09114" isRoot="true">
+        <KFunction>{"Name":"fnPopInvoice2","ID":"f_22","Category":"Root","Version":"4.0.5.4","FunctionLevel":0,"FunctionType":0,"FunctionType2":1,"RegisterAsLuDbFunction":false,"SaveToDLUR":false,"ApiFunction":false,"DecisionFunction":false,"RequiresLuReference":false,"Desc":"","Language":1,"IsRootFunction":true,"inputParams":[{"Name":"inp","ID":"fi_22.0","Index":0,"DataType":"String"}],"outputParams":[{"Name":"visit_id","ID":"fo_22.0","Index":0,"DataType":"String"}],"HideMethodInUi":false}</KFunction>
+      </FunctionMapNode>
+      <Link partID="25" from="11" to="2" pointsArr="169.710068 218 179.710068 218 61 62.9453163 71 62.9453163" fromNodePartID="22" fromNodeColumnName="visit_id" toNodePartID="13" toNodeColumnName="visit_id" />
+      <Link partID="26" from="6" to="12" pointsArr="368.002563 62.9453163 378.002563 62.9453163 394 61.0364571 404 61.0364571" fromNodePartID="13" fromNodeColumnName="visit_id" toNodePartID="0" toNodeColumnName="visit_id" />
+      <Link partID="27" from="7" to="13" pointsArr="368.002563 75.0182343 378.002563 75.0182343 394 73.109375 404 73.109375" fromNodePartID="13" fromNodeColumnName="lab_id" toNodePartID="0" toNodeColumnName="lab_id" />
+      <Link partID="28" from="9" to="14" pointsArr="368.002563 99.16406 378.002563 99.16406 394 85.18229 404 85.18229" fromNodePartID="13" fromNodeColumnName="lab_date" toNodePartID="0" toNodeColumnName="lab_date" />
+      <Link partID="29" from="8" to="15" pointsArr="368.002563 87.09115 378.002563 87.09115 394 97.2552 404 97.2552" fromNodePartID="13" fromNodeColumnName="lab_type" toNodePartID="0" toNodeColumnName="lab_type" />
+    </Graph>
+  </DiagramGraph>
+</TablePopulationObject>

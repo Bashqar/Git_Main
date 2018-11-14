@@ -1,0 +1,20 @@
+﻿/////////////////////////////////////////////////////////////////////////
+// LU Globals
+/////////////////////////////////////////////////////////////////////////
+
+package com.k2view.cdbms.usercode.lu.!LU_NAME!;
+
+import com.k2view.cdbms.usercode.common.SharedGlobals;
+import com.k2view.cdbms.shared.utils.UserCodeDescribe.*;
+
+public class Globals extends SharedGlobals {
+
+	#globals#
+	#each#
+	@desc(!COMMENT!)
+	@category("!CATEGORY!")
+	public static final String !NAME! = "!VALUE!";
+	#end#
+
+
+}
