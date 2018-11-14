@@ -9,7 +9,6 @@ import com.k2view.cdbms.shared.utils.UserCodeDescribe.*;
 
 public class Globals extends SharedGlobals {
 
-	public static final String BB = "BB";
 
 	
 
